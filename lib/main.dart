@@ -24,11 +24,26 @@ class CalculatorState extends State<Calculator>{
       appBar: AppBar(title: Text("Calculator by Nichachawalee Chatwattananon 6035512029"),),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-          Text("Calculator"),
+          buildAnswer(),
         ],)
       )
     );
   }
 }
+
+Widget buildAnswer() {
+    return Container(
+        padding: EdgeInsets.all(16),
+        constraints: BoxConstraints.expand(height: 180),
+        color: Color(0xffecf0f1),
+        child: Align(
+            alignment: Alignment.bottomRight,
+            child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+              Text("12", style: TextStyle(fontSize: 45, fontWeight: FontWeight.bold)),
+            ])));
+  }
+
+ 
